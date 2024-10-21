@@ -1,24 +1,32 @@
-document.getElementById('generate-btn').addEventListener('click', generateWord);
+document.getElementById('generate-btn').addEventListener('click', generateWords);
 
-function generateWord() {
+function generateWords() {
     const partOfSpeech = document.getElementById('part-of-speech').value;
     const syllableCount = document.getElementById('syllable-count').value;
+    const wordCount = parseInt(document.getElementById('word-count').value);
+    
+    let wordsContainer = document.getElementById('generated-words');
+    wordsContainer.innerHTML = ''; // 生成された単語のリストをクリア
 
-    let word = generateSyllableStructure(syllableCount);
+    for (let i = 0; i < wordCount; i++) {
+        let word = generateSyllableStructure(syllableCount);
 
-    switch (partOfSpeech) {
-        case 'reduplication':
-            word = reduplication(word);
-            break;
-        case 'adjective':
-            word = makeAdjective(word);
-            break;
-        case 'verb':
-            word = makeVerb(word);
-            break;
+        switch (partOfSpeech) {
+            case 'reduplication':
+                word = reduplication(word);
+                break;
+            case 'adjective':
+                word = makeAdjective(word);
+                break;
+            case 'verb':
+                word = makeVerb(word);
+                break;
+        }
+
+        let wordElement = document.createElement('p');
+        wordElement.textContent = word;
+        wordsContainer.appendChild(wordElement);
     }
-
-    document.getElementById('generated-word').innerText = word;
 }
 
 function getRandomFromArray(arr) {
