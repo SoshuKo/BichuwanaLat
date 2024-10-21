@@ -24,8 +24,12 @@
         <option value="2">2</option>
     </select>
 
+    <label for="word-count">生成する単語数:</label>
+    <input type="number" id="word-count" value="1" min="1">
+
     <button id="generate-btn">生成</button>
 
-    <p>生成された単語: <span id="generated-word">ここに単語が表示されます</span></p>
+    <p>生成された単語:</p>
+    <div id="generated-words"></div>
 </body>
 </html>
