@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ビチュワナ語単語生成器</title>
+    <script src="generator.js" defer></script>
+</head>
+<body>
+    <h1>ビチュワナ語単語生成器</h1>
+
+    <label for="part-of-speech">品詞:</label>
+    <select id="part-of-speech">
+        <option value="noun">名詞</option>
+        <option value="reduplication">名詞（重複法）</option>
+        <option value="adjective">形容詞</option>
+        <option value="verb">動詞</option>
+    </select>
+
+    <label for="syllable-count">音節数:</label>
+    <select id="syllable-count">
+        <option value="random">ランダム</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+    </select>
+
+    <button id="generate-btn">生成</button>
+
+    <p>生成された単語: <span id="generated-word">ここに単語が表示されます</span></p>
+</body>
+</html>
